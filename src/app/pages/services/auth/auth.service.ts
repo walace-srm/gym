@@ -17,29 +17,23 @@ export class AuthService {
   private auth = inject(Auth);
   private router = inject(Router);
 
-  // Converte o observable do Firebase User em Signal
   private user$ = authUser(this.auth);
   user = toSignal<User | null>(this.user$, { initialValue: null });
 
-  // Computed que pega o displayName do usuário
   displayName = computed(() => this.user()?.displayName ?? 'Usuário');
 
-  // Computed que pega o email (caso precise em algum lugar)
-  email = computed(() => this.user()?.email ?? null);
+  email = computed(() => this.user()?.email ?? null); //Apenas se quiser usar esse cara em outro canto da aplicação.
 
-  // Login
   login(email: string, password: string) {
     return from(signInWithEmailAndPassword(this.auth, email, password));
   }
 
-  // Logout
   logout() {
     signOut(this.auth).then(() => {
       this.router.navigate(['/login']);
     });
   }
-
-  // Cadastro
+  
   register(email: string, password: string, name: string) {
     return from(
       createUserWithEmailAndPassword(this.auth, email, password).then(cred => {

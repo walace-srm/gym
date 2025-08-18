@@ -58,8 +58,6 @@ export class HomeComponent implements OnInit {
 
   trackById = (_: number, item: any) => item.id;
 
-  ngOnInit(): void {
-    console.log('NOME', this.displayName)
-  }
+  ngOnInit(): void {}
 
 }
