@@ -1,0 +1,96 @@
+<ion-content [fullscreen]="true" class="app-dark">
+  <section class="header-hero">
+    <div class="topbar">
+      <ion-menu-button autoHide="true"></ion-menu-button>
+      <img src="assets/img/logo.png" alt="logo" class="logo" />
+
+      <div class="status-dots">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <img src="assets/img/avatar2.jpg" alt="avatar" class="avatar" />
+
+      <div class="info">
+        <h2 class="name">{{ authService.displayName() }}</h2>
+        <span class="level">{{ user.level }}</span>
+
+        <div class="chips">
+          <button class="chip">
+            <ion-icon name="body-outline"></ion-icon>
+            <span>MEU CORPO</span>
+          </button>
+          <button class="chip">
+            <ion-icon name="trophy-outline"></ion-icon>
+            <span>OBJETIVOS E CONQUISTAS</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+
+    <div class="section-title">
+      <h3>PERSONAL ONLINE</h3>
+      <button class="circle-plus"><ion-icon name="add"></ion-icon></button>
+    </div>
+
+    <div class="carousel">
+      <div class="card large" *ngFor="let c of personalOnline; trackBy: trackById">
+        <img [src]="c.image" [alt]="c.title" />
+        <div class="overlay"></div>
+
+        <div class="card-content">
+          <ng-container *ngIf="c.isCreate; else normal">
+            <button class="circle-plus big"><ion-icon name="add"></ion-icon></button>
+          </ng-container>
+          <ng-template #normal></ng-template>
+
+          <div class="title" [class.compact]="!c.isCreate">
+            <span [innerText]="c.title"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h3>PROGRAMAS</h3>
+      <span class="pill-new">novo</span>
+    </div>
+
+    <div class="carousel">
+      <div class="card large" *ngFor="let p of programas; trackBy: trackById">
+        <img [src]="p.image" [alt]="p.title" />
+        <div class="overlay"></div>
+
+        <div class="card-content">
+          <div class="badge" *ngIf="p.badge">{{ p.badge }}</div>
+          <div class="title">
+            <span>{{ p.title }}</span>
+          </div>
+
+          <div class="progress" *ngIf="p.progress">
+            <div class="bar">
+              <div class="fill" [style.width.%]="p.progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h3>CONTEÚDOS</h3>
+    </div>
+
+    <div class="grid">
+      <div class="grid-card" *ngFor="let item of conteudos; trackBy: trackById">
+        <div class="thumb"></div>
+      </div>
+    </div>
+
+    <div class="bottom-spacer"></div>
+  </section>
+</ion-content>

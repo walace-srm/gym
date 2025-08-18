@@ -1,0 +1,93 @@
+.register-page {
+  --background: linear-gradient(135deg, #1f1f1f, #121212);
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 400px;
+  background: #1e1e1e;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subtitle {
+  margin-bottom: 2rem;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.input-item {
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  --background: #2a2a2a;
+  --highlight-color-focused: #4dabf7;
+  transition: all 0.3s ease;
+}
+
+.input-item:focus-within {
+  --background: #3a3a3a;
+  box-shadow: 0 0 8px rgba(77, 171, 247, 0.4);
+}
+
+ion-input {
+  padding: 12px 0;
+  color: #fff;
+}
+
+ion-icon {
+  color: #4dabf7;
+}
+
+.register-btn {
+  margin-top: 1.5rem;
+  --border-radius: 12px;
+  --background: #4dabf7;
+  font-weight: 600;
+  color: #fff;
+  --box-shadow: 0 5px 15px rgba(77, 171, 247, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  --box-shadow: 0 8px 25px rgba(77, 171, 247, 0.5);
+}
+
+.login-link {
+  margin-top: 1.8rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.login-link a {
+  color: #4dabf7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  color: #1e90ff;
+}

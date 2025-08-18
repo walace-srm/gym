@@ -1,0 +1,36 @@
+<ion-content class="register-page" fullscreen>
+  <div class="register-wrapper">
+    <div class="register-container">
+      <h1>Criar conta</h1>
+      <p class="subtitle">Preencha os dados abaixo</p>
+
+      <ion-item class="input-item">
+        <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Nome completo" [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="E-mail" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Senha" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Confirmar senha" [(ngModel)]="confirmPassword"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="register()" class="register-btn">
+        Cadastrar
+      </ion-button>
+
+      <p class="login-link">
+        Já tem conta? <a routerLink="/login">Entrar</a>
+      </p>
+    </div>
+  </div>
+</ion-content>
